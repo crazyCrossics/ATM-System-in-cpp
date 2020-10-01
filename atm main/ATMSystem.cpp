@@ -1,4 +1,6 @@
 
+// ATM Machine using cpp
+
 #include <iostream>
 #include <conio.h>
 #include <string.h>
@@ -22,7 +24,7 @@ int main ()
     
     if (pin==1994)
     {
-    cout << "\nProceeding !!!\n";
+    cout << "\nPin Approved. Proceeding!!!\n";
         
     cout << "\n\t************************************";
     cout << "\n\t* Welcome to CrazyCrossics ATM *";
@@ -49,12 +51,12 @@ int main ()
             goto s;
         }
         
-        else if (choice=2)
+        else if (choice==2)
         {
-            cout << "\nEnter the amount you want to withdraw: ";
-            cin >> withdrow;
+            cout << "\nEnter the amount of withdraw: ";
+            cin >> withdraw;
             
-            if (withdraw<amount)
+            if (withdraw>amount)
             {
                 cout << "\nYou don't have sufficient balance.\n";
                 goto s;
@@ -74,6 +76,8 @@ int main ()
             cout << "\nEnter the amount you want to deposit: ";
             cin >> deposit;
             
+             amount=amount+deposit;
+            
             cout << "\nYour current balance is: \n" << amount;
             
             goto s;
@@ -85,6 +89,12 @@ int main ()
         }
         
     }
+ 	 else if (pin!=0)
+    {
+        cout << "\nInvalid pin!" << "\nPlease try again.";
+    }
     
+    return 0;
+    getch();   
 }
 
